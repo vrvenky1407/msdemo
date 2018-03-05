@@ -1,0 +1,70 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Solution Central REST APIs",
+    "description": "#### Demo APIs for showcasing the REST endpoints. These are read only GET calls currently and does not update the database.\n\nPlease visit Solution Central here: [https://eas.fnis.com]",
+    "contact":{  
+      "email":"innovation@fisglobal.com"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "host": "localhost:9091",
+  "basePath": "/",
+  "tags":[  
+      {  
+         "name":"Products",
+         "description":"Product details"
+      }
+   ],
+  "paths": {
+    "/product/id/{id}": {
+      "get": {
+        "tags":[  
+                 "Products"
+        ],
+        "summary": "Get Product by ID(s)",
+        "description": "Returns a single product or a list or Products, e.g. 1998 or 2466,2353,1888,1843,1998,10455",
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "description": "ID",
+          "type": "number",
+          "required": true
+        }],
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Get product details based on id or comma separated id's"
+            }
+          }
+        }
+      }
+    },
+    "/product/name/{name}": {
+      "get": {
+         "tags":[  
+                   "Products"
+        ],
+        "summary": "Get Product by Name",
+        "description": "Returns a single product for the product name, e.g. Profile",
+        "parameters": [{
+          "name": "name",
+          "in": "path",
+          "description": "Name",
+          "type": "string",
+          "required": true
+        }],
+        "get": {
+          "responses": {
+            "200": {
+              "description": "Get product details based on name"
+            }
+          }
+        }
+      }
+    }
+  }
+}

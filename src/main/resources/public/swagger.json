@@ -1,0 +1,64 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Products",
+    "description": "#### Products from Solution Central\n"
+  },
+  "schemes": [
+    "http"
+  ],
+  "options": {
+    "responses": {
+      "default": {
+        "description": "CORS headers for all operations",
+        "headers": {
+          "Access-Control-Allow-Origin": {
+            "type": "string",
+            "default": "http://localhost:9091"
+          },
+          "Access-Control-Allow-Headers": {
+            "type": "string",
+            "default": "X-UA-Compatible, X-XSS-Protection"
+          }
+        }
+      }
+    }
+  },
+  "host": "localhost:9091",
+  "basePath": "/",
+  "paths": {
+    "/product/id/{id}": {
+      "parameters": [{
+        "name": "id",
+        "in": "path",
+        "description": "ID",
+        "type": "number",
+        "required": true
+      }],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Get product details based on id"
+          }
+        }
+      }
+    },
+    "/product/name/{name}": {
+      "parameters": [{
+        "name": "name",
+        "in": "path",
+        "description": "Name",
+        "type": "string",
+        "required": true
+      }],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Get product details based on name"
+          }
+        }
+      }
+    }
+  }
+}
